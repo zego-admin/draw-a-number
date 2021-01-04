@@ -1,0 +1,154 @@
+<html>
+
+    <head>
+        <title>ODTÜ ROBOT ADMİN</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-sclae=1.o">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+            
+            td {
+                max-width: 8px;
+                max-height: 8px;
+                padding: 1.5em;
+                border: 1px black solid;
+            }
+            #free,
+        .highlight {
+            background-color: rgb(9, 60, 73);
+        }
+        
+        .cell {
+            background-color: rgb(24, 161, 109);
+        }
+        
+        .site-header {
+            width: 28.5em;
+            padding: 20px;
+            background: #00a3ef;
+            background: -moz-linear-gradient(top, #00a3ef 0%, #0b4182 100%);
+            background: -webkit-linear-gradient(top, #00a3ef 0%, #0b4182 100%);
+            background: linear-gradient(to bottom, #00a3ef 0%, #0b4182 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00a3ef', endColorstr='#0b4182', GradientType=0);
+        }
+
+
+
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+
+        </style>
+
+    </head>
+    
+    <body>
+        <h1 class="site-header">ODTÜ ROBOT TOPLULUĞU TOMBALA ETKİNLİĞİ</h1>
+        
+        
+
+        <div class="container">
+            <button class="btn btn1" onclick="randomNumbers()">SAYI ÇEK</button>
+        </div>
+
+        <div class="numberCircle">
+            <p id="yazi" style="font-size: 45px;font-weight: bold;"></p>
+        </div>
+
+
+
+
+        <script language="javascript" type="text/javascript">
+            var count = 1;
+            var i = 0;
+            for (var a = 1; a < 10; a++) {
+                document.write('<table id="table">');
+                document.write("<tr>");
+                for (var b = 1; b < 11; b++) {
+                    document.write("<td class= " + count + ">" + count + "</td>");
+                    count = count + 1;
+                }
+                document.write("</tr>");
+                document.write("</table>");
+            }
+
+           /* const btn = document.createElement("button");
+             document.body.appendChild(btn);
+             btn.innerText = "Sayı çek"
+            btn.addEventListener("click",()=>{
+            
+             randomNumbers();
+
+
+      });*/
+
+
+      var sayi = "?";
+      document.getElementById("yazi").innerHTML = sayi;
+
+
+      
+        var sayilar = new Array(90);
+        
+      function randomNumbers(){
+           var sayi = -1;
+           
+          
+        while (i < 90 ) {
+            
+            var randomNumber =  Math.floor(Math.random() * 90) + 1;
+            
+            if (sayilar.indexOf(randomNumber) === -1) {
+                sayilar[i] = randomNumber;
+                sayi = randomNumber;
+                i = i + 1;
+                console.log(sayi);
+                var x = document.getElementsByClassName(sayi);
+                document.getElementById("yazi").innerHTML = sayi;
+                x[0].style.background = "#00a3ef";
+               
+
+                return sayi;
+            }
+
+            }
+
+            
+                return -1;
+        }
+
+
+
+
+
+
+
+                    //highlight
+        table.onclick = function(e) {
+            let target = e.target; // where was the click
+            console.log(e);
+            highlight(e.target);
+
+        };
+
+        function highlight(x) {
+            x.classList.toggle('highlight');
+        }
+
+
+
+
+        </script>
+    </body>
+    
+    </html>
